@@ -1,0 +1,17 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+    <div>Using Lua?
+        <input id="auto" type="checkbox" onchange="luaOrManual(this.checked)">
+    </div>
+    <div id="update_bar"></div>
+    <div id="count">/</div>
+    <div id="pokedex">
+    {% for i in range(1, nb+1) %}
+        <img class="gray" id="p{{ i }}"
+        src="{{ url_for('static', filename='img/' + folder + '/' + i|string + '.png') }}" />
+    {% endfor %}
+    </div>
+    <div id="ontheroadagain" hidden=true>On this road:
+        <div id="road"></div>
+    </div>
+{% include 'footer.html' %}
